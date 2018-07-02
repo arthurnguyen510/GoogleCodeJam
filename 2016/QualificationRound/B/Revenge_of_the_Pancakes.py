@@ -40,16 +40,14 @@ def serve_pancake(stack_of_pancakes):
             return flips
         else:
             return flips
-    all_happy = False
 
-    while not all_happy:
-        for iter_pancake in range(1, len(stack_of_pancakes)):
-            if stack_of_pancakes[iter_pancake] != stack_of_pancakes[iter_pancake - 1]:
-                stack_of_pancakes = flip_pancake(stack_of_pancakes, iter_pancake - 1)
-                flips += 1
-        all_happy, curr_flips, stack_of_pancakes = is_happy(stack_of_pancakes)
+    for iter_pancake in range(1, len(stack_of_pancakes)):
+        if stack_of_pancakes[iter_pancake] != stack_of_pancakes[iter_pancake - 1]:
+            stack_of_pancakes = flip_pancake(stack_of_pancakes, iter_pancake - 1)
+            flips += 1
+    all_happy, curr_flips, stack_of_pancakes = is_happy(stack_of_pancakes)
 
-        flips += curr_flips
+    flips += curr_flips
 
     return flips
 
