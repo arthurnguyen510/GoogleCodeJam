@@ -40,6 +40,8 @@ def find_numbers(number):
             if number_in:
                 list_of_used_numbers += dict_of_numbers[check_number]
 
+    list_of_used_numbers = (''.join(sorted(list_of_used_numbers)))
+
     return list_of_used_numbers, number
 
 
@@ -55,4 +57,4 @@ def find_numbers_in_test(input_file):
 
 
 if __name__ == '__main__':
-    find_numbers_in_test('/Users/arthurnguyen/Downloads/A-small-practice.in')
+    find_numbers_in_test('/Users/arthurnguyen/PycharmProjects/GoogleCodeJam/2016/Round 1B/A/A-small-practice.in')
